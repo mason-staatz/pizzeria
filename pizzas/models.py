@@ -20,8 +20,9 @@ class Topping(models.Model):
         return self.topping_name
 
 class Comments(models.Model):
-    comment = models.CharField(max_length=250)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.CharField(max_length=250)
+    
 
 
     def __str__(self):
