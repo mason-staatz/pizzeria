@@ -11,5 +11,5 @@ urlpatterns = [
     path('pizza_menu/<int:pizza_id>/', views.pizza_type, name='pizza_type'),
     #path('new_topic/', views.new_topic, name='new_topic'),
     path('new_comment/', views.new_comment, name='new_comment'),
-    #path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
+    #path('new_comment/<int:pizza_id>/', views.new_comment, name='new_comment'),
 ]
