@@ -1,21 +1,28 @@
-{% extends "pizzas/base.html" %}
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>HTML Background Color</title>
+    <style>
+        body {
+            background-image: url("https://cdn2.lamag.com/wp-content/uploads/sites/6/2021/10/best-pizza-los-angeles-kyle-moreno.jpg");
+            text-align: left;
+        }
+    </style>
 </head>
 
-<body style="background-color:rgb(233, 128, 7);">
+<body>
+    {% extends "pizzas/base.html" %}
 
+
+    {% block content %}
+
+    <h1
+        style="box-sizing: content-box; font-weight: lighter; width: 20%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 52;">
+        Papa's Pizzeria is here for all your pizza needs! View our pizzas
+        today. </h1>
+
+
+    {% endblock content %}
 </body>
 
 </html>
-<p>
-</p>
-
-{% block content %}
-<font size="+2">Pizzeria is here for all your pizza needs! Come get your pizza today.</font>
-
-{% endblock content %}

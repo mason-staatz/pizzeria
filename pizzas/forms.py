@@ -8,4 +8,4 @@ class CommentsForm(forms.ModelForm):
         model = Comments
         fields = ["comment"]
         labels = {"comment": ""}
-        widgets = {"comment": forms.Textarea(attrs={"cols": 80})}
+        widgets = {"comment": forms.Textarea(attrs={"cols": 30})}

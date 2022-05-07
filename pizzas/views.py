@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from pizzas.models import Comments, Pizza, Topping, Comments
+from pizzas.models import Pizza, Topping, Comments
 from pizzas.forms import CommentsForm
 
 
@@ -12,8 +12,7 @@ def index(request):
 def pizza_type(request,pizza_id):       #2 types of requests in HTML, get and post. "Get" views the database and pulls info                                     #"Post" adds new info into the database
     pizza = Pizza.objects.get(id=pizza_id)
     toppings = pizza.topping_set.all()
-    picture = Pizza.picture
-    context = {'toppings':toppings, 'picture':picture}
+    context = {'toppings':toppings}
     
     
     return render(request, 'pizzas/pizza_type.html',  context)

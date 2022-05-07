@@ -1,11 +1,26 @@
-<p>
-    <a href="{% url 'pizzas:index' %}">Home</a>
-    <a href="{% url 'pizzas:pizza_menu' %}">Our Pizzas</a>
-</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("https://cdn2.lamag.com/wp-content/uploads/sites/6/2021/10/best-pizza-los-angeles-kyle-moreno.jpg");
+            background-color: #79a88b;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <a href="{% url 'pizzas:index' %}">Home</a>
+        <a href="{% url 'pizzas:pizza_menu' %}">Our Pizzas</a>
+    </p>
 
 
-{% block content %}
+    {% block content %}
+    <font size="+2">Pizzeria is here for all your pizza needs! Come get your pizza today.</font>
 
+    {% endblock content %}
+</body>
 
-
-{% endblock content %}
+</html>

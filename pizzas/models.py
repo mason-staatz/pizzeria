@@ -3,13 +3,11 @@ from django.db import models
 from this import d
 from audioop import maxpp
 from django.contrib.auth.models import User
-from pizzeria.settings import MEDIA_URL
 
 
 # Create your models here.
 class Pizza(models.Model):
     pizza_name = models.CharField(max_length=200)
-    pizza_pics = models.ImageField(upload_to='img', blank= True, null= True)
 
     def __str__(self):
         return self.pizza_name

@@ -1,13 +1,48 @@
 {% extends "pizzas/base.html" %}
 
 
-{% block content %}
 
-<p>
-    Pizzas: {{ pizzas }}
-</p>
+{% block images %}
 
+{% for p in pizza %}
 <ul>
+
+
+    {% if p == 1 %}
+    <li><img
+            src="https://images.contentstack.io/v3/assets/bltbb619fd5c667ba2d/blt2d4e43bcebe1548e/60ca60fa1e0505677a881227/Cheese_Pizza.jpg">
+        Cheese
+    </li>
+    {% elif p == 2 %}
+    <li><img
+            src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Grilled-Veggie-Pizza_EXPS_LSBZ18_48960_D01_18_6b-5.jpg">
+        Veggie
+    </li>
+    {% elif p == 3 %}
+    <li><img
+            src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/28/1/FNM_040112-Copy-That-002_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382541346030.jpeg">
+        BBQ Chicken
+    </li>
+    {% elif p == 4 %}
+    <li><img
+            src="https://www.simplyrecipes.com/thmb/1r598MjyhONPUUz7R3ah3sPY95M=/4543x3029/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Breakfast-Pizza-LEAD-2-cf74cdb6a65a45dd95979217e78e258f.jpg">
+        Breakfast
+    </li>
+    {% elif p == 2 %}
+    <li><img src="https://www.acozykitchen.com/wp-content/uploads/2021/10/MeatLoversPizza-8-1.jpg">Meat Lovers</li>
+    {% else %}
+    <li>
+        <p>No pizza to display</p>
+    </li>
+    {% endif %}
+
+</ul>
+{% endfor %}
+{% endblock images %}
+
+{% block content %}
+<ul>
+
     {% for t in toppings %}
     <li>
         <p> {{ t.topping_name }} </p>
@@ -16,8 +51,6 @@
     {% empty %}
     <li>There are no toppings for this Pizza yet. </li>
     {% endfor %}
-
-    <a href="{% url 'pizzas:pizza_menu' %}">Our Pizzas</a>
 
 </ul>
 <a href="{% url 'pizzas:new_comment' %}">Add a comment</a>
